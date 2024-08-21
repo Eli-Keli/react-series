@@ -3,15 +3,16 @@
 Welcome to my **React Series** repository! This repository contains a collection of React projects that I work on daily to improve my frontend development skills. Each project explores different React concepts and features, ranging from basic to advanced levels.
 
 ## Table of Contents
-- [Introduction](#introduction)
-- [Projects](#projects)
-  - [Day 1: Background changer](#day-1-project-name)
-  - [Day 2: Password Generator](#day-2-project-name)
-  - [Day 3: Currency Converter](#day-3-project-name)
-  - [Day 4: Theme Switcher](#day-4-project-name)
-  - [And more...](#and-more)
-- [Technologies Used](#technologies-used)
-- [How to Run the Projects](#how-to-run-the-projects)
+- Introduction
+- Projects
+  - Day 1: Background changer
+  - Day 2: Password Generator
+  - Day 3: Currency Converter
+  - Day 4: Theme Switcher
+  - Day 5: Todo Application
+  - And more...
+- Technologies Used
+- How to Run the Projects
 
 ## Introduction
 This repository is a part of my personal journey to mastering React by building various projects daily. Each day I tackle a new challenge or concept to solidify my understanding of the React framework, including hooks, state management, routing, and more. Feel free to explore the projects, provide feedback, or contribute to the series.
@@ -43,6 +44,12 @@ This repository is a part of my personal journey to mastering React by building 
 
 **Key Concepts Covered:**
 - Context API
+
+### Day 5: Todo App
+**Description:** Building a todo app that lets users manage their todo lists and stores each todo in browser's local storage
+
+**Key Concepts Covered:**
+- Context API with local storage
 
 
 ### And more...
