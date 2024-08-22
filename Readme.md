@@ -10,6 +10,7 @@ Welcome to my **React Series** repository! This repository contains a collection
   - Day 3: Currency Converter
   - Day 4: Theme Switcher
   - Day 5: Todo Application
+  - Day 6: Redux Toolkit
   - And more...
 - Technologies Used
 - How to Run the Projects
@@ -50,6 +51,16 @@ This repository is a part of my personal journey to mastering React by building 
 
 **Key Concepts Covered:**
 - Context API with local storage
+
+### Day 6: Redux ToolKit
+**Description:** Introduction to the Redux ToolKit by building a simple todo app
+
+**Key Concepts Covered:**
+- Redux stores
+- Redux reducers
+- Redux slicers
+- useDispatch
+- useSelector
 
 
 ### And more...
