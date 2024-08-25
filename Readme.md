@@ -11,6 +11,7 @@ Welcome to my **React Series** repository! This repository contains a collection
   - Day 4: Theme Switcher
   - Day 5: Todo Application
   - Day 6: Redux Toolkit
+  - Day 7: Zustand 
   - And more...
 - Technologies Used
 - How to Run the Projects
@@ -61,6 +62,13 @@ This repository is a part of my personal journey to mastering React by building 
 - Redux slicers
 - useDispatch
 - useSelector
+
+### Day 7: Zustand State Management
+**Description:** Learning state management using Zustand by creating a course list app
+
+**Key Concepts Covered:**
+- Zustand store
+- Zustand Middleware
 
 
 ### And more...
