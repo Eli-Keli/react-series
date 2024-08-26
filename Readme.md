@@ -12,6 +12,7 @@ Welcome to my **React Series** repository! This repository contains a collection
   - Day 5: Todo Application
   - Day 6: Redux Toolkit
   - Day 7: Zustand 
+  - Day 8: Appwrite Blog 
   - And more...
 - Technologies Used
 - How to Run the Projects
@@ -70,6 +71,14 @@ This repository is a part of my personal journey to mastering React by building 
 - Zustand store
 - Zustand Middleware
 
+### Day 8: Appwrite Blog app (backend)
+**Description:** Building a full stack project with React and Appwrite
+
+**Key Concepts Covered:**
+- Setting up appwrite 
+- Appwrite Authentication
+- Appwrite Databases, Query and Storage 
+
 
 ### And more...
 *Every day, a new project will be added to the repository. Check back regularly for updates!*
@@ -79,6 +88,7 @@ This repository is a part of my personal journey to mastering React by building 
 - JavaScript (ES6+)
 - Tailwind
 - HTML
+- CSS
 
 ## How to Run the Projects
 1. Clone this repository: `git clone https://github.com/Eli-Keli/react-series.git`
