@@ -93,6 +93,7 @@ This repository is a part of my personal journey to mastering React by building 
 ## How to Run the Projects
 1. Clone this repository: `git clone https://github.com/Eli-Keli/react-series.git`
 2. Navigate to the project directory: `cd react-series`
+2. Navigate to the project name: `cd <project-name>`
 3. Install the dependencies: `npm install`
 4. Install Tailwind CSS: https://tailwindcss.com/docs/guides/vite
 5. Start the development server: `npm run dev`
