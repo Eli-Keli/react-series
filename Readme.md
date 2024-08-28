@@ -71,13 +71,15 @@ This repository is a part of my personal journey to mastering React by building 
 - Zustand store
 - Zustand Middleware
 
-### Day 8: Appwrite Blog app (backend)
+### Day 8: Appwrite Blog app
 **Description:** Building a full stack project with React and Appwrite
 
 **Key Concepts Covered:**
 - Setting up appwrite 
 - Appwrite Authentication
-- Appwrite Databases, Query and Storage 
+- Appwrite Databases, Query and Storage
+- Redux Toolkit
+- Authentication
 
 
 ### And more...
