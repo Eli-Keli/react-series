@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Post = () => {
+function Post() {
   return (
     <div>Post</div>
   )

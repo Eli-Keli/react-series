@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AllPosts = () => {
+function AllPosts() {
   return (
     <div>AllPosts</div>
   )

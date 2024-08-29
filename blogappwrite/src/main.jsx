@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store/store.js'
 
+// Pages
 import Protected from './components/AuthLayout.jsx'
 import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
