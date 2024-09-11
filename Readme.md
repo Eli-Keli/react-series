@@ -12,7 +12,8 @@ Welcome to my **React Series** repository! This repository contains a collection
   - Day 5: Todo Application
   - Day 6: Redux Toolkit
   - Day 7: Zustand 
-  - Day 8: Appwrite Blog 
+  - Day 8: Appwrite Blog
+  - Day 9: Home Budget Application 
   - And more...
 - Technologies Used
 - How to Run the Projects
@@ -21,6 +22,9 @@ Welcome to my **React Series** repository! This repository contains a collection
 This repository is a part of my personal journey to mastering React by building various projects daily. Each day I tackle a new challenge or concept to solidify my understanding of the React framework, including hooks, state management, routing, and more. Feel free to explore the projects, provide feedback, or contribute to the series.
 
 ## Projects
+**Note:** *Some projects in this series may have taken more than one day to complete due to various challenges and learning opportunities.*
+
+
 
 ### Day 1: Background Changer
 **Description:** 
@@ -71,7 +75,7 @@ This repository is a part of my personal journey to mastering React by building 
 - Zustand store
 - Zustand Middleware
 
-### Day 8: Appwrite Blog app
+### Day 8: Appwrite Blog app (unfinished)
 **Description:** Building a full stack project with React and Appwrite
 
 **Key Concepts Covered:**
@@ -81,6 +85,18 @@ This repository is a part of my personal journey to mastering React by building 
 - Redux Toolkit
 - Authentication
 
+### Day 9: Home Budget App
+**Description:** Building a budgeting app with React Router
+
+**Key Concepts Covered:**
+- Routing Basics & Loaders 
+- Layouts and Actions
+- Custom Error Pages
+- React Tostify (Adding toast messages)
+- Using helper functions 
+- Handling form submissions
+- useFetcher
+- useRef
 
 ### And more...
 *Every day, a new project will be added to the repository. Check back regularly for updates!*
@@ -88,9 +104,8 @@ This repository is a part of my personal journey to mastering React by building 
 ## Technologies Used
 - React
 - JavaScript (ES6+)
-- Tailwind
-- HTML
-- CSS
+- TailwindCSS
+- Vanilla CSS
 
 ## How to Run the Projects
 1. Clone this repository: `git clone https://github.com/Eli-Keli/react-series.git`
