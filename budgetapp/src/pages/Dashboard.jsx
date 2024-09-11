@@ -5,11 +5,12 @@
 import { useLoaderData } from "react-router-dom"
 
 // helper functions
-import { createBudget, fetchData, wait } from "../helpers"
+import { createBudget, createExpense, fetchData, wait } from "../helpers"
 
 // components
 import Intro from "../components/Intro"
 import AddBudgetForm from "../components/AddBudgetForm"
+import AddExpenseForm from "../components/AddExpenseForm"
 
 // Library
 import { toast } from "react-toastify"
@@ -49,11 +50,28 @@ export const dashboardAction = async ({ request }) => {
         amount: values.newBudgetAmount
       })
       // return toast message
-      return toast.success("Budget created successfully")
+      return toast.success(`Budget ${values.newBudget} created successfully!`)
     } catch (e) {
       throw new Error("There was a problem creating your budget")
     }
   }
+
+  if (_action === "createExpense") {
+    try {
+      // Create a new expense
+      createExpense({
+        name: values.newExpense,
+        amount: values.newExpenseAmount,
+        budgetId: values.newExpenseBudget
+      })
+      // return toast message
+      return toast.success(`Expense ${values.newExpense} created successfully!`)
+    } catch (e) {
+      throw new Error("There was a problem creating your expense")
+    }
+  }
+
+
 }
 
 function Dashboard() {
@@ -64,13 +82,25 @@ function Dashboard() {
         userName ? (
           <div className="dashboard">
             <h1>Welcome back, <span className="accent">{userName}</span></h1>
-            <p>Personal budgeting is the secret to financial freedom.</p>
-            <p>Create a budget and get started!</p>
             <div className="grid-sm">
-              <div className="grid-lg">
-                <AddBudgetForm />
-              </div>
+              {
+                budgets && budgets.length > 0 ? (
+                  <div className="grid-lg">
+                    <div className="flex-lg">
+                      <AddBudgetForm />
+                      <AddExpenseForm budgets={budgets} />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="grid-sm">
+                    <p>Personal budgeting is the secret to financial freedom.</p>
+                    <p>Create a budget to get started!</p>
+                    <AddBudgetForm />
+                  </div>
+                )
+              }
             </div>
+
           </div>
         ) : <Intro />
       }
