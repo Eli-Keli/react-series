@@ -52,7 +52,6 @@ const AddBudgetForm = () => {
                         name="newBudgetAmount"
                         step="0.01"
                         inputMode='decimal'
-                        placeholder="e.g. $400"
                         required
                     />
                     <input type="hidden" name="_action" value="createBudget" />

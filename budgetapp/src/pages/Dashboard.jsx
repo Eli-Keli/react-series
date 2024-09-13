@@ -11,6 +11,7 @@ import { createBudget, createExpense, fetchData, wait } from "../helpers"
 import Intro from "../components/Intro"
 import AddBudgetForm from "../components/AddBudgetForm"
 import AddExpenseForm from "../components/AddExpenseForm"
+import BudgetItem from "../components/BudgetItem"
 
 // Library
 import { toast } from "react-toastify"
@@ -89,6 +90,14 @@ function Dashboard() {
                     <div className="flex-lg">
                       <AddBudgetForm />
                       <AddExpenseForm budgets={budgets} />
+                    </div>
+                    <h2>Existing Budgets</h2>
+                    <div className="budgets">
+                      {
+                        budgets.map((budget) => (
+                          <BudgetItem key={budget.id} budget={budget} />   
+                        ))
+                      }
                     </div>
                   </div>
                 ) : (
