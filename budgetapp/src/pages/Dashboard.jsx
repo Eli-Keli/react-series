@@ -2,7 +2,7 @@
 /* eslint-disable react-refresh/only-export-components */
 
 // rrd imports
-import { useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 
 // helper functions
 import { createBudget, createExpense, fetchData, wait } from "../helpers"
@@ -16,6 +16,7 @@ import Table from "../components/Table"
 
 // Library
 import { toast } from "react-toastify"
+import { ArrowRightIcon } from "@heroicons/react/24/solid"
 
 
 // loader
@@ -105,7 +106,20 @@ function Dashboard() {
                       expenses && expenses.length > 0 && (
                         <div className="grid-md">
                           <h2>Recent Expenses</h2>
-                          <Table expenses={expenses.sort((a, b) => b.createdAt - a.createdAt)} />
+                          <Table expenses={expenses
+                            .sort((a, b) => b.createdAt - a.createdAt)
+                            .slice(0, 8)}
+                          />
+                          {
+                            expenses.length > 8 && (
+                              <Link
+                                to="expenses"
+                                className="btn btn--dark"
+                              >
+                                View all expenses<ArrowRightIcon width={20} />
+                              </Link>
+                            )
+                          }
                         </div>
                       )
                     }
