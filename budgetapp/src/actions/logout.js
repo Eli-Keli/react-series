@@ -8,8 +8,10 @@ import {toast} from "react-toastify"
 import { deleteItem } from "../helpers";
 
 export async function logoutAction() {
-    // delete the user
+    // delete the user and all budgets + expenses
     deleteItem("userName")
+    deleteItem("budgets")
+    deleteItem("expenses")
     toast.success("You've deleted your account")
     // redirect to home
     return redirect("/")

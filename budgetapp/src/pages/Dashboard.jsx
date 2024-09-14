@@ -12,6 +12,7 @@ import Intro from "../components/Intro"
 import AddBudgetForm from "../components/AddBudgetForm"
 import AddExpenseForm from "../components/AddExpenseForm"
 import BudgetItem from "../components/BudgetItem"
+import Table from "../components/Table"
 
 // Library
 import { toast } from "react-toastify"
@@ -21,7 +22,8 @@ import { toast } from "react-toastify"
 export function dashboardLoader() {
   const userName = fetchData("userName")
   const budgets = fetchData("budgets")
-  return { userName, budgets }
+  const expenses = fetchData("expenses")
+  return { userName, budgets, expenses }
 }
 
 // action
@@ -31,7 +33,7 @@ export const dashboardAction = async ({ request }) => {
   const data = await request.formData();
   const { _action, ...values } = Object.fromEntries(data)
 
-  // Check if the user is creating a new user or creating a budget
+  // Check if the user is creating a new user or creating a budget or expense
   if (_action === "newUser") {
     try {
       // Create a new user
@@ -76,14 +78,14 @@ export const dashboardAction = async ({ request }) => {
 }
 
 function Dashboard() {
-  const { userName, budgets } = useLoaderData()
+  const { userName, budgets, expenses } = useLoaderData()
   return (
     <>
       {
         userName ? (
           <div className="dashboard">
-            <h1>Welcome back, <span className="accent">{userName}</span></h1>
             <div className="grid-sm">
+              <h1>Welcome back, <span className="accent">{userName}</span></h1>
               {
                 budgets && budgets.length > 0 ? (
                   <div className="grid-lg">
@@ -95,10 +97,18 @@ function Dashboard() {
                     <div className="budgets">
                       {
                         budgets.map((budget) => (
-                          <BudgetItem key={budget.id} budget={budget} />   
+                          <BudgetItem key={budget.id} budget={budget} />
                         ))
                       }
                     </div>
+                    {
+                      expenses && expenses.length > 0 && (
+                        <div className="grid-md">
+                          <h2>Recent Expenses</h2>
+                          <Table expenses={expenses.sort((a, b) => b.createdAt - a.createdAt)} />
+                        </div>
+                      )
+                    }
                   </div>
                 ) : (
                   <div className="grid-sm">
