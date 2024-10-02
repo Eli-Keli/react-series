@@ -1,5 +1,12 @@
+import { useWeather } from "../context/Weather";
 
 const WeatherSummary = () => {
+    const { currentWeather, loading, error } = useWeather();
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
+    if (!currentWeather) return null;
+
     return (
         <div className="bg-white rounded-lg p-6 shadow-md mt-6">
             <h2 className="text-lg font-semibold mb-4">Sun & Moon Summary</h2>
@@ -8,12 +15,12 @@ const WeatherSummary = () => {
                     <span className="text-yellow-400">☀️</span>
                     <div>
                         <div className="text-sm font-semibold">Air Quality</div>
-                        <div className="text-lg">156</div>
+                        <div className="text-lg">{currentWeather.name}</div>
                     </div>
                 </div>
                 <div className="flex flex-col items-center">
                     <div className="text-sm text-gray-600">Sunrise</div>
-                    <div className="font-semibold">5:43AM</div>
+                    <div className="font-semibold"></div>
                 </div>
             </div>
         </div>

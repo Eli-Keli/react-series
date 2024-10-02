@@ -1,29 +1,24 @@
 import { Bell, ChevronDown, MapPin, Search, Settings } from "lucide-react"
-import { api } from "../api/api";
 import { useState } from "react";
-import useWeather from "../context/Weather";
+import {useWeather} from "../context/Weather";
 
 
 
 const Header = () => {
-    const [location, setLocation] = useState("");
-    const [weather, setWeather] = useState({});
+    const [searchCity, setSearchCity] = useState('');
+    const { setCity, currentWeather, loading, error } = useWeather();
 
-    const {city, setCity} = useWeather()
-
-    const searchLocation = async (e) => {
-        if (e.key === "Enter") {
-            const response = await fetch(`${api.base}weather?q=${location}&units=metric&APPID=${api.key}`)
-            const data = await response.json()
-            if (response.ok) {
-                console.log(data);
-                setWeather(data);
-            }
-            setCity(weather.name)
-            console.log(city);
-            setLocation("");
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (searchCity.trim()) {
+            setCity(searchCity);
+            setSearchCity('');
         }
     };
+
+    if (loading) return <div>Loading...</div>;
+    if (!currentWeather) return null;
+    if (error) return <div>Error: {error}</div>;
 
 
     return (
@@ -32,19 +27,18 @@ const Header = () => {
                 <h1 className="text-blue-500 text-2xl font-bold">SkyCast</h1>
                 <div className="flex items-center space-x-2 text-gray-600">
                     <MapPin />
-                    <span>{weather.name}</span>
+                    <span>{currentWeather.name}</span>
                 </div>
-                <div className="relative">
+                <form onSubmit={handleSubmit} className="relative">
                     <input
                         type="text"
                         placeholder="Search Location"
                         className="pl-8 pr-2 py-1 rounded-full border border-gray-300"
-                        onKeyDown={searchLocation}
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
+                        value={searchCity}
+                        onChange={(e) => setSearchCity(e.target.value)}
                     />
                     <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                </div>
+                </form>
             </div>
             <div className="flex items-center space-x-4">
                 <Bell className="text-gray-600 w-5 h-5 cursor-pointer" />
