@@ -11,7 +11,7 @@ import WeatherSummary from '../components/WeatherSummary'
 function WeatherDashboard() {
 
     return (
-        <div className="bg-gray-100 p-4 font-sans h-screen">
+        <div className="bg-gray-100 p-4 font-sans min-h-screen">
             <Header />
             {/* Main content */}
             <div className="grid grid-cols-3 gap-4">

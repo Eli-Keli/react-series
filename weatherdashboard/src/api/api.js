@@ -20,6 +20,7 @@ export const fetchCurrentWeather = async (city) => {
 export const fetchForecast = async (city) => {
   try {
     const response = await axios.get(`${api.base}forecast?q=${city}&appid=${api.key}&units=metric`);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error('Error fetching forecast:', error);

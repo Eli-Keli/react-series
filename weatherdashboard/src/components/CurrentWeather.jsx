@@ -1,5 +1,6 @@
 
 import { useWeather } from "../context/Weather"
+import { getWeatherIcon, isNightTime } from "../helper";
 
 
 const CurrentWeather = () => {
@@ -12,19 +13,22 @@ const CurrentWeather = () => {
                     <h2 className="text-lg font-semibold">Current Weather</h2>
                 </div>
                 {
-                    error ? <p className="text-xl text-gray-600 mb-6">{error}</p>
+                    error ? <p className="text-xl text-gray-600 mb-6">Error loading current weather data</p>
                         : (
                             <div className="flex items-center space-x-4">
                                 <div className="text-6xl font-bold">
                                     {loading ? "..." : currentWeather.main.temp}
-                                    <sup className="text-gray-500 text-md">°C</sup></div>
+                                    <sup className="text-gray-500 text-md">°C</sup>
+                                </div>
                                 <div>
                                     <div className="text-xl">{loading ? "seaching..." : currentWeather.weather[0].main}</div>
                                     <div className="text-sm text-gray-600">
                                         Feels like {loading ? "..." : currentWeather.main.feels_like}°C
                                     </div>
                                 </div>
-                                <p className="mt-4 text-sm text-gray-600"></p>
+                                <p className="mt-4 text-9xl text-gray-600">
+                                    {loading ? "..." : getWeatherIcon(currentWeather.weather[0].id, isNightTime(currentWeather.dt))}
+                                </p>
                             </div>
                         )
                 }
