@@ -14,7 +14,7 @@ import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 
 // layout
-import Main, { mainLoader } from './layout/main';
+import Main, { mainLoader } from './layout/Main';
 
 // pages
 import Dashboard, { dashboardAction, dashboardLoader } from './pages/Dashboard';
